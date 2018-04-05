@@ -29,9 +29,10 @@ android:
 licenses:
   - '.+'
 
-script: ./gradlew assembleKiwixRelease 
+script: ./gradlew assembleKiwixDebug 
 after_success:
     - ls $TRAVIS_BUILD_DIR/
     - find $TRAVIS_BUILD_DIR/ -type f -name "*.apk"
-    #- curl -sL monkop.com/cli | python - -k $monkopapikey -w -t 15 -a "$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/app-debug.apk" -st ESPRESSO -sf TESTP_APK
+    - curl -sL monkop.com/cli | python - -k $monkopapikey -w -t 15 -a "$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/kiwix/release/app-kiwix-debug.apk"
+    # -st ESPRESSO -sf TESTP_APK
 
