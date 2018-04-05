@@ -33,6 +33,6 @@ script: ./gradlew assembleKiwixDebug
 after_success:
     - ls $TRAVIS_BUILD_DIR/
     - find $TRAVIS_BUILD_DIR/ -type f -name "*.apk"
-    - curl -sL monkop.com/cli | python - -k $monkopapikey -v -w -t 15 -a "$TRAVIS_BUILD_DIR/android/app/build/outputs/apk/kiwix/debug/app-kiwix-debug.apk"
+    - curl -sL monkop.com/cli | python - -k $monkopapikey -v -w -t 15 -a "$TRAVIS_BUILD_DIR/app/build/outputs/apk/kiwix/debug/app-kiwix-debug.apk"
     # -st ESPRESSO -sf TESTP_APK
 
